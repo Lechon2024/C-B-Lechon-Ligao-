@@ -1,6 +1,6 @@
 /* General Styling */
 html {
-    scroll-behavior: smooth; /* Enables smooth scrolling */
+    scroll-behavior: smooth;
 }
 
 body {
@@ -18,13 +18,13 @@ body {
 }
 
 .logo {
-    max-width: 150px; /* Adjust the size based on your logo */
+    max-width: 150px;
     height: auto;
 }
 
 /* Header Styling */
 header {
-    background-image: url('images.jpg'); /* Adjust the path */
+    background-image: url('images.jpg');
     background-size: cover;
     background-position: center;
     color: #fff;
@@ -68,76 +68,54 @@ header {
 }
 
 .hero-content h1 {
-    font-size: 64px;
+    font-size: 48px;
     margin: 0;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .hero-content p {
-    font-size: 24px;
+    font-size: 20px;
     margin-top: 10px;
     margin-bottom: 20px;
 }
 
 /* CTA Button Styling */
 .cta-button {
-    background-color: #ff9900; /* Background color */
-    color: #fff; /* Text color */
-    padding: 12px 24px; /* Adjust padding for better click area */
-    text-decoration: none; /* Remove underline */
-    font-size: 20px; /* Increase font size for prominence */
-    border: 2px solid #fff; /* White border */
-    border-radius: 5px; /* Rounded corners */
-    position: relative; /* Positioning for the pseudo-element */
-    overflow: hidden; /* Hide overflow */
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+    background-color: #ff9900;
+    color: #fff;
+    padding: 12px 24px;
+    text-decoration: none;
+    font-size: 20px;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-/* Hover Effect */
 .cta-button:hover {
-    background-color: #cc7a00; /* Darker background on hover */
-    transform: scale(1.05); /* Slightly enlarge on hover */
+    background-color: #cc7a00;
+    transform: scale(1.05);
 }
 
-/* Inner Glow Effect */
-.cta-button::after {
-    content: ""; /* Empty content for the pseudo-element */
-    position: absolute; /* Absolute positioning */
-    top: 0; /* Align to top */
-    left: 0; /* Align to left */
-    right: 0; /* Align to right */
-    bottom: 0; /* Align to bottom */
-    border-radius: 5px; /* Match button corners */
-    background-color: rgba(255, 255, 255, 0.2); /* Subtle inner glow */
-    opacity: 0; /* Initially hidden */
-    transition: opacity 0.3s ease; /* Smooth transition for visibility */
-}
-
-/* Show glow on hover */
-.cta-button:hover::after {
-    opacity: 1; /* Show glow on hover */
-}
-
-
-/* About, Services, Menu, Order, and Contact Sections */
+/* Section Styling */
 .about, .services, .menu, .order, .contact {
     padding: 50px 0;
     text-align: center;
-    background-color: #800000; /* Maroon background */
-    color: #fff; /* White text for contrast */
+    background-color: #800000;
+    color: #fff;
 }
 
 .about p, .services p {
-    width: 60%;
+    width: 80%;
     margin: 0 auto;
     font-size: 18px;
 }
 
-/* Menu Grid */
 .menu-grid {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap; /* Allow items to wrap for smaller screens */
+    flex-wrap: wrap;
     gap: 40px;
 }
 
@@ -149,31 +127,50 @@ header {
 .menu-item img {
     width: 100%;
     border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Added shadow for better image focus */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Order Section Styling */
-.order form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    max-width: 400px;
-    margin: 0 auto;
+/* Responsive Design for Mobile */
+@media only screen and (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 32px;
+    }
+
+    .hero-content p {
+        font-size: 18px;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        gap: 10px;
+        top: 10px;
+        right: 10px;
+    }
+
+    .about p, .services p {
+        width: 90%;
+    }
+
+    .menu-grid {
+        flex-direction: column;
+    }
+
+    .menu-item {
+        width: 100%;
+    }
 }
 
-.order label {
-    font-weight: bold;
-}
+@media only screen and (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 24px;
+    }
 
-.order input, .order select {
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
+    .hero-content p {
+        font-size: 16px;
+    }
 
-.order button {
-    background-color: #ff9900;
-    color: #fff;
-    padding: 10px
+    .cta-button {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+}
